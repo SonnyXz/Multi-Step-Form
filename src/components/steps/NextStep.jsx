@@ -1,5 +1,5 @@
 import React from "react";
-import { Input } from "../Input";
+import { Input } from "../layers/Input";
 
 export const NextStep = ({ handleSubmit, stepCount, handleInput }) => {
   return (
@@ -14,6 +14,7 @@ export const NextStep = ({ handleSubmit, stepCount, handleInput }) => {
           errorMsg={"Insert email account"}
           placeholder={"...@example.com"}
           type={"email"}
+          handleInput={handleInput}
         />
         <Input
           text={"Phone number"}
@@ -21,6 +22,7 @@ export const NextStep = ({ handleSubmit, stepCount, handleInput }) => {
           errorMsg={"Insert phone number"}
           placeholder={"####-####"}
           type={"number"}
+          handleInput={handleInput}
         />
         <Input
           text={"Password"}
@@ -28,6 +30,7 @@ export const NextStep = ({ handleSubmit, stepCount, handleInput }) => {
           errorMsg={"At least include 1 letter,"}
           placeholder={"Password"}
           type={"password"}
+          handleInput={handleInput}
         />
         <Input
           text={"Confirm Password"}
@@ -35,6 +38,7 @@ export const NextStep = ({ handleSubmit, stepCount, handleInput }) => {
           errorMsg={"Password is not matching"}
           placeholder={"Confirm Password"}
           type={"password"}
+          handleInput={handleInput}
         />
       </div>
     </div>

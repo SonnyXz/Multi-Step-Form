@@ -1,43 +1,45 @@
 "use client";
-import { Footer } from "../components/Footer";
-import { Header } from "../components/Header";
+import { Header, Footer } from "../components/layers";
 import { NameStep, NextStep, LastStep } from "../components/steps";
-
 import { useState } from "react";
 
 export default function Home() {
-  const [button, setButton] = useState(1);
+  const [stepCount, setStepCount] = useState(0);
 
-  const handleNext = () => {
-    setButton(button + 1);
+  const handleNextStep = (event) => {
+    event.preventDefault();
+
+    if (stepCount >= 2) {
+      return;
+    }
+
+    setStepCount(stepCount + 1);
   };
-  const handlePrev = () => {
-    setButton(button - 1);
+  const handlePreviousStep = () => {
+    if (stepCount < 0) {
+      return;
+    }
+    setStepCount(stepCount - 1);
   };
 
-  const [Namestep, setNamestep] = useState(true);
-  const [Nextstep, setNextstep] = useState(false);
-  const namestepHandler = () => {
-    setNamestep(true);
-    setNextstep(false);
-  };
-  const nextstepHandler = () => {
-    setNamestep(false);
-    setNextstep(true);
-  };
+  // const handleInputChange = (event) => {};
+
+  const CurrentStep = [NameStep, NextStep, LastStep][stepCount];
+
+  //const [inputValues, setInputValues] = useState
 
   return (
     <div className="w-[100vw] h-[100vh] flex justify-center items-center">
-      <div className="w-[480px] h-[655px] shadow-xl flex flex-col items-center justify-around rounded-xl">
-        <div className="w-[416px] h-[385px flex flex-col gap-5">
+      <div className="w-[480px] h-[655px] shadow-xl flex flex-col items-center justify-between rounded-xl py-8 px-8">
+        <div className="w-[416px]  flex flex-col gap-5">
           <Header></Header>
-          <NameStep></NameStep>
-          <Footer
-            alhamCount={button}
-            befHandle={handlePrev}
-            aftHandle={handleNext}
-          />
+          <CurrentStep />
         </div>
+        <Footer
+          stepCount={stepCount + 1}
+          befHandle={handlePreviousStep}
+          aftHandle={handleNextStep}
+        />
       </div>
     </div>
   );

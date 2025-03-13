@@ -1,7 +1,7 @@
 import React from "react";
-import { Input } from "../Input";
+import { Input } from "../layers/Input";
 
-export const NameStep = ({ handleSubmit, stepCount, handleInput }) => {
+export const NameStep = ({ handleSubmit, handleInput }) => {
   return (
     <div
       className="flex flex-col gap-3 justify-between h-full"
@@ -14,6 +14,7 @@ export const NameStep = ({ handleSubmit, stepCount, handleInput }) => {
           errorMsg={"Type first name"}
           placeholder={"First Name"}
           type={"text"}
+          handleInput={handleInput}
         />
         <Input
           text={"Last Name"}
@@ -21,6 +22,7 @@ export const NameStep = ({ handleSubmit, stepCount, handleInput }) => {
           errorMsg={"Type last name"}
           placeholder={"Last Name"}
           type={"text"}
+          handleInput={handleInput}
         />
         <Input
           text={"Username"}
@@ -28,6 +30,7 @@ export const NameStep = ({ handleSubmit, stepCount, handleInput }) => {
           errorMsg={"Type username"}
           placeholder={"Username"}
           type={"text"}
+          handleInput={handleInput}
         />
       </div>
     </div>
