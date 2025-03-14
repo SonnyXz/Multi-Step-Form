@@ -10,6 +10,7 @@ export const NextStep = ({ handleSubmit, stepCount, handleInput }) => {
       <div>
         <Input
           text={"Email"}
+          name={"email"}
           isError={true}
           errorMsg={"Insert email account"}
           placeholder={"...@example.com"}
@@ -18,6 +19,7 @@ export const NextStep = ({ handleSubmit, stepCount, handleInput }) => {
         />
         <Input
           text={"Phone number"}
+          name={"phoneNumber"}
           isError={true}
           errorMsg={"Insert phone number"}
           placeholder={"####-####"}
@@ -26,6 +28,7 @@ export const NextStep = ({ handleSubmit, stepCount, handleInput }) => {
         />
         <Input
           text={"Password"}
+          name={"password"}
           isError={true}
           errorMsg={"At least include 1 letter,"}
           placeholder={"Password"}
@@ -34,6 +37,7 @@ export const NextStep = ({ handleSubmit, stepCount, handleInput }) => {
         />
         <Input
           text={"Confirm Password"}
+          name={"confirmPassword"}
           isError={true}
           errorMsg={"Password is not matching"}
           placeholder={"Confirm Password"}

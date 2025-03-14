@@ -9,7 +9,9 @@ export const Input = ({
   return (
     <div>
       <div className="flex flex-col pb-3">
-        <p>{text}</p>
+        <p>
+          {text} <span className="text-red-600">*</span>
+        </p>
         <input
           className="w-[416px] h-[44px] p-3 border rounded-md border-[#8E8E8E]"
           placeholder={placeholder}
